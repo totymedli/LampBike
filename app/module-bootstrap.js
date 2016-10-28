@@ -1,0 +1,1 @@
+var LampBike = angular.module('LampBike', ['ngRoute']);

@@ -1,0 +1,184 @@
+/*Global*/
+
+html {
+	height: 100%;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+body {
+	height: 100%;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: column nowrap;
+	flex-flow: column nowrap;
+	background-color: #0287a7;
+	color: white;
+}
+
+a, a:active, a:visited {
+	color: white;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: black;
+}
+
+/*Header*/
+
+.main-header {
+	flex-basis: 40px;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	background-color: #272727;
+	color: white;
+}
+
+.timer {
+	flex-basis: 100px;
+	font-size: 2em;
+	text-align: center;
+}
+
+.start-stop-button {
+	flex-basis: 100px;
+	font-size: 2em;
+	background-color: green;
+	text-align: center;
+	cursor: pointer;
+}
+
+.start-stop-button.stop {
+	background-color: red;
+}
+
+.spacer{
+	flex-grow: 1;
+}
+
+.button {
+	flex-basis: 50px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+	background-color: black;
+}
+
+.drop-down {
+	display: none;
+	position: absolute;
+	top: 40px;
+	right: 0;
+	font-size: 2em;
+	list-style: none;
+	background-color: grey;
+	margin: 0;
+	padding: 20px;
+	text-align: center;
+}
+
+.drop-down > li > a {
+	text-decoration: none;
+}
+
+.button:focus + .drop-down,
+.drop-down:hover {
+    display: block;
+}
+
+/*Body and counter layout*/
+
+.main-body {
+	flex: 1;
+}
+
+.grid {
+	height: 100%;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.grid > div {
+	flex-basis: 25%;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+
+	color: white;
+	cursor: pointer;
+}
+
+.grid > div:nth-child(-n+3) {
+	border-bottom: 5px white solid;
+}
+
+.grid > div > .count {
+	flex-basis: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 15vmin;
+}
+
+.grid > div > .image {
+	flex-basis: 50%;
+	background-size: 100% 100%;
+}
+
+@media all and (orientation: landscape) {
+
+	.grid {
+		flex-direction: row;
+	}
+
+	.grid > div {
+		flex-direction: column;
+	}
+
+	.grid > div:nth-child(-n+3) {
+		border-bottom: none;
+		border-right: 5px white solid;
+	}
+
+}
+
+/*Other*/
+
+.page {
+	padding: 20px;
+}
